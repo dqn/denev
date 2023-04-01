@@ -1,7 +1,9 @@
 {
   "type": "module",
   "name": "denev",
+  "description": "Encrypt and decrypt .env and others",
   "version": "0.1.1",
+  "author": "dqn <dqn270@gmail.com>",
   "license": "MIT",
   "scripts": {
     "clean": "rimraf ./dist",
@@ -24,5 +26,10 @@
     "tsup": "^6.7.0",
     "tsx": "^3.12.6",
     "typescript": "^5.0.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dqn/denev.git"
+  },
+  "homepage": "https://github.com/dqn/denev#readme"
 }
