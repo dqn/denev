@@ -11,7 +11,7 @@ import { parseArgs } from "node:util";
 
 const keySize = 32;
 const ivSize = 16;
-const defaultEncryptFilename = "denev_aes";
+const defaultEncryptFilename = "denev.key";
 
 function usage(): void {
   console.log(
@@ -67,7 +67,7 @@ async function encrypt(
   const cipher = createCipheriv("aes-256-cbc", key, iv);
 
   await writeFile(
-    targetFilename + ".aes",
+    targetFilename + ".enc",
     Buffer.concat([iv, cipher.update(content), cipher.final()]),
   );
 }
@@ -88,7 +88,7 @@ async function decrypt(
   const decrypted = Buffer.concat([decipher.update(content), decipher.final()]);
 
   await writeFile(
-    targetFilename.replace(/.aes$/, ""),
+    targetFilename.replace(/.enc$/, ""),
     decrypted.toString("utf-8"),
   );
 }
@@ -150,14 +150,14 @@ async function main(): Promise<void> {
   }
 
   const encrypts = parsed.values.encrypt;
-  if (encrypts !== void 0) {
+  if (encrypts !== undefined) {
     await Promise.all(encrypts.map((en) => encrypt(en, parsed.values.key)));
     console.log("encrypted: " + encrypts.join(", "));
     return;
   }
 
   const decrypts = parsed.values.decrypt;
-  if (decrypts !== void 0) {
+  if (decrypts !== undefined) {
     await Promise.all(decrypts.map((de) => decrypt(de, parsed.values.key)));
     console.log("decrypted: " + decrypts.join(", "));
     return;
