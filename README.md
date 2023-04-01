@@ -22,14 +22,14 @@ $ npx denev -g -p <password> -s <salt>
 # => Key will be generated
 
 $ npx denev -e .env # Encrypt .env
-# => .env.aes will be created
+# => .env.enc will be created
 
-$ npx denev -d .env.aes # Decrypt .env.aes
+$ npx denev -d .env.enc # Decrypt .env.enc
 # => .env will be created
 
 # Multiple files
 $ npx denev -e .env -e secret.json
-$ npx denev -d .env.aes -d secret.json.aes
+$ npx denev -d .env.enc -d secret.json.enc
 ```
 
 ## License
