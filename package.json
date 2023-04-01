@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "clean": "rimraf ./dist",
-    "build": "tsup src"
+    "build": "tsup src",
+    "lint": "yarn tsc --noEmit"
   },
   "bin": {
     "denev": "dist/index.cjs"
