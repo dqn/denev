@@ -2,7 +2,7 @@
   "type": "module",
   "name": "denev",
   "description": "Encrypt and decrypt .env and others",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "author": "dqn <dqn270@gmail.com>",
   "license": "MIT",
   "scripts": {
