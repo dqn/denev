@@ -11,7 +11,7 @@ import { parseArgs } from "node:util";
 
 const keySize = 32;
 const ivSize = 16;
-const defaultEncryptFilename = "denev.key";
+const defaultKeyFilename = "denev.key";
 
 function usage(): void {
   console.log(
@@ -27,7 +27,7 @@ function usage(): void {
 async function generate(
   password: string,
   salt: string,
-  keyFilename = defaultEncryptFilename,
+  keyFilename = defaultKeyFilename,
 ): Promise<void> {
   const key = scryptSync(password, salt, keySize);
   await writeFile(keyFilename, key);
@@ -56,7 +56,7 @@ async function generate(
 
 async function encrypt(
   targetFilename: string,
-  keyFilename = defaultEncryptFilename,
+  keyFilename = defaultKeyFilename,
 ): Promise<void> {
   const [content, key] = await Promise.all([
     readFile(targetFilename),
@@ -74,7 +74,7 @@ async function encrypt(
 
 async function decrypt(
   targetFilename: string,
-  keyFilename = defaultEncryptFilename,
+  keyFilename = defaultKeyFilename,
 ): Promise<void> {
   const [contentWithIv, key] = await Promise.all([
     readFile(targetFilename),
@@ -145,7 +145,7 @@ async function main(): Promise<void> {
     }
 
     await generate(password, salt, parsed.values.key);
-    console.log("generated: " + (parsed.values.key ?? defaultEncryptFilename));
+    console.log("generated: " + (parsed.values.key ?? defaultKeyFilename));
     return;
   }
 
