@@ -8,6 +8,7 @@
   "scripts": {
     "clean": "rimraf ./dist",
     "build": "tsup src",
+    "prepare": "yarn build",
     "lint": "yarn tsc --noEmit"
   },
   "bin": {
@@ -27,6 +28,14 @@
     "tsx": "^3.12.6",
     "typescript": "^5.0.3"
   },
+  "keywords": [
+    "env",
+    "dotenv",
+    "encryption",
+    "decryption",
+    "encrypt",
+    "decrypt"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/dqn/denev.git"
