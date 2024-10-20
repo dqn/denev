@@ -21,12 +21,12 @@
     "package.json"
   ],
   "devDependencies": {
-    "@types/node": "^18.15.11",
-    "prettier": "^2.8.7",
-    "rimraf": "^5.0.0",
-    "tsup": "^8.0.0",
-    "tsx": "^3.12.6",
-    "typescript": "^5.0.3"
+    "@types/node": "18.19.57",
+    "prettier": "2.8.8",
+    "rimraf": "5.0.10",
+    "tsup": "8.3.0",
+    "tsx": "3.14.0",
+    "typescript": "5.6.3"
   },
   "keywords": [
     "env",
