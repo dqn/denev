@@ -3,6 +3,8 @@
 [![CI](https://github.com/dqn/denev/workflows/CI/badge.svg)](https://github.com/dqn/denev/actions)
 [![npm version](https://img.shields.io/npm/v/denev.svg)](https://www.npmjs.com/package/denev)
 
+> ⚠️ **Warning**: Use dotenvx instead.
+
 Encrypt and decrypt .env and others.
 
 ## Installation
